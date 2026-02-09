@@ -1,0 +1,113 @@
+import { useState, useEffect, useRef } from 'react'
+import { Github } from 'lucide-react'
+import Card from '../components/Card'
+import Tag from '../components/Tag'
+import './Projects.css'
+
+const _d = (s) => atob(s)
+
+const PROJECTS = [
+  {
+    name: 'valeeze',
+    description: 'AI item valuations with realtime market prices and profit estimates for resellers',
+    tags: ['react', 'AI', 'vite'],
+    status: 'active',
+    link: 'https://valeeze.com',
+    category: 'ai',
+  },
+  {
+    name: 'flight search',
+    description: 'SearXNG with custom optimized engines for speed, zero logging, and a google-like interface',
+    tags: ['infrastructure', 'privacy', 'searxng'],
+    status: 'stable',
+    link: 'https://search.yeth.dev',
+    category: ['infrastructure', 'forks'],
+  },
+  {
+    name: 'linkcheck',
+    description: _d('Y2hlY2tzIGlmIGEgdXJsIGlzIGJsb2NrZWQgYnkgc2Nob29sIHdlYiBmaWx0ZXJzIGxpa2UgR29HdWFyZGlhbiwgU2VjdXJseSwgYW5kIExpZ2h0c3BlZWQ='),
+    tags: ['python', 'security', 'automation'],
+    status: 'active',
+    link: 'https://check.yeth.dev',
+    category: ['security', 'other'],
+  },
+  {
+    name: 'movies that dont waste my time',
+    description: 'movie library with aggregated reviews from multiple sources. forked and added support for free APIs',
+    tags: ['javascript', 'APIs', 'self-hosted'],
+    status: 'stable',
+    link: 'https://github.com/yethdev/movies-that-dont-waste-my-time/tree/main',
+    category: 'forks',
+  },
+]
+
+const FILTER_LABELS = { all: 'all', security: 'security', networking: 'networking', ai: 'AI', infrastructure: 'infrastructure', forks: 'forks', other: 'other' }
+const FILTERS = Object.keys(FILTER_LABELS)
+
+const statusVariant = (s) => s === 'active' ? 'green' : s === 'experiment' ? 'muted' : 'default'
+
+export default function Projects() {
+  const [filter, setFilter] = useState('all')
+  const ref = useRef(null)
+  useEffect(() => { ref.current?.classList.add('page-visible') }, [])
+
+  const shown = filter === 'all'
+    ? PROJECTS
+    : PROJECTS.filter(p => Array.isArray(p.category) ? p.category.includes(filter) : p.category === filter)
+
+  return (
+    <div className="page page-enter" ref={ref}>
+      <section className="projects-hero">
+        <h1>Projects</h1>
+        <p>
+          Stuff I've built or I'm working on. More on my{' '}
+          <a href="https://github.com/yethdev" target="_blank" rel="noopener noreferrer">GitHub</a>.
+        </p>
+        <p className="projects-note">
+          everything is self-hosted on my own computer, so sometimes stuff goes down
+          when I'm working on it, restarting, or during a power outage. saving up for a vps, donate <a href="https://yeth.dev/donate" target="_blank" rel="noopener noreferrer">here</a>.
+        </p>
+      </section>
+
+      <section>
+        <div className="filter-bar">
+          {FILTERS.map(f => (
+            <button
+              key={f}
+              className={`filter-btn${filter === f ? ' active' : ''}`}
+              onClick={() => setFilter(f)}
+            >
+              {FILTER_LABELS[f]}
+            </button>
+          ))}
+        </div>
+
+        <div className="card-grid">
+          {shown.map(project => (
+            <Card key={project.name} href={project.link || project.github} className="interactive project-card">
+              <div className="project-header">
+                <h3 className="mono">{project.name}</h3>
+                <Tag variant={statusVariant(project.status)}>{project.status}</Tag>
+              </div>
+              <p>{project.description}</p>
+              <div className="project-footer">
+                <div className="tags">
+                  {project.tags.map(t => <Tag key={t}>{t}</Tag>)}
+                </div>
+{project.github && (
+                  <div className="project-links">
+                    <Github size={16} />
+                  </div>
+                )}
+              </div>
+            </Card>
+          ))}
+        </div>
+
+        {shown.length === 0 && (
+          <p className="no-results">Nothing here yet. Check back later or try another filter.</p>
+        )}
+      </section>
+    </div>
+  )
+}

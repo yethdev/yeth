@@ -1,0 +1,30 @@
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+.tag-default {
+  background: var(--accent-glow);
+  color: var(--accent-hover);
+}
+
+.tag-green {
+  background: var(--green-dim);
+  color: var(--green);
+}
+
+.tag-muted {
+  background: rgba(113, 113, 122, 0.1);
+  color: var(--text-muted);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
