@@ -32,9 +32,10 @@ const PROJECTS = [
   },
   {
     name: 'linkcheck',
-    description: 'discontinued due to legal reasons',
+    description: _d('Y2hlY2tzIGlmIGEgdXJsIGlzIGJsb2NrZWQgYnkgc2Nob29sIHdlYiBmaWx0ZXJzLiBzdXBwb3J0cyBiYXRjaCBvZiB1cCB0byAxLDAwMCB1cmxzIGFuZCBmaW5pc2hlcyBhbGwgaW4gdW5kZXIgMjAgc2Vjb25kcy4gZGlzY29udGludWVkIGR1ZSB0byBsZWdhbCByZWFzb25zLg=='),
     tags: ['discontinued'],
     status: 'discontinued',
+    link: 'https://github.com/yethdev/linkcheck',
     category: ['security', 'other'],
   },
   {
