@@ -81,16 +81,14 @@ export default function Home() {
               <Tag>vite</Tag>
             </div>
           </Card>
-          <Card href={`https://check.${_host()}`} className="interactive">
+          <Card className="interactive">
             <div className="project-header">
               <h3 className="mono">linkcheck</h3>
-              <Tag variant="green">active</Tag>
+              <Tag variant="muted">discontinued</Tag>
             </div>
-            <p>{atob('Y2hlY2tzIGlmIGEgdXJsIGlzIGJsb2NrZWQgYnkgc2Nob29sIHdlYiBmaWx0ZXJzIGxpa2UgR29HdWFyZGlhbiwgU2VjdXJseSwgYW5kIExpZ2h0c3BlZWQ=')}</p>
+            <p>discontinued due to legal reasons</p>
             <div className="tags">
-              <Tag>python</Tag>
-              <Tag>security</Tag>
-              <Tag>automation</Tag>
+              <Tag>discontinued</Tag>
             </div>
           </Card>
         </div>

@@ -32,16 +32,15 @@ const PROJECTS = [
   },
   {
     name: 'linkcheck',
-    description: _d('Y2hlY2tzIGlmIGEgdXJsIGlzIGJsb2NrZWQgYnkgc2Nob29sIHdlYiBmaWx0ZXJzIGxpa2UgR29HdWFyZGlhbiwgU2VjdXJseSwgYW5kIExpZ2h0c3BlZWQ='),
-    tags: ['python', 'security', 'automation'],
-    status: 'active',
-    sub: 'check',
+    description: 'discontinued due to legal reasons',
+    tags: ['discontinued'],
+    status: 'discontinued',
     category: ['security', 'other'],
   },
   {
     name: 'movies that dont waste my time',
     description: 'movie library with aggregated reviews from multiple sources. forked and added support for free APIs',
-    tags: ['fork', 'APIs', ''],
+    tags: ['fork', 'APIs', 'entertainment'],
     status: 'stable',
     link: 'https://github.com/yethdev/movies-that-dont-waste-my-time/tree/main',
     category: 'forks',
@@ -51,7 +50,7 @@ const PROJECTS = [
 const FILTER_LABELS = { all: 'all', security: 'security', networking: 'networking', ai: 'AI', infrastructure: 'infrastructure', forks: 'forks', other: 'other' }
 const FILTERS = Object.keys(FILTER_LABELS)
 
-const statusVariant = (s) => s === 'active' ? 'green' : s === 'experiment' ? 'muted' : 'default'
+const statusVariant = (s) => s === 'active' ? 'green' : s === 'experiment' || s === 'discontinued' ? 'muted' : 'default'
 
 export default function Projects() {
   const [filter, setFilter] = useState('all')
