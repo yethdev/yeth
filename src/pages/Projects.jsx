@@ -17,7 +17,7 @@ const PROJECTS = [
   {
     name: 'valeeze',
     description: 'AI item valuations with realtime market prices and profit estimates for resellers. ik its vibe coded this was a test that i forgot to end',
-    tags: ['react', 'AI', 'vite'],
+    tags: ['react', 'AI', 'vibe coded 🫩'],
     status: 'stable',
     link: 'https://valeeze.com',
     category: 'ai',
