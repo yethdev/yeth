@@ -4,8 +4,6 @@ import Card from '../components/Card'
 import Tag from '../components/Tag'
 import './Projects.css'
 
-const _d = (s) => atob(s)
-
 const _onYeth = () => {
   const h = location.hostname
   return h === 'yeth.dev' || h === 'www.yeth.dev' || h === 'localhost'
@@ -20,7 +18,7 @@ const _projectUrl = (p) => {
 const PROJECTS = [
   {
     name: 'valeeze',
-    description: 'AI item valuations with realtime market prices and profit estimates for resellers. ik its vibe coded this was a test that i forgot to end',
+    description: 'an AI value identifier. upload an image, it sends everything to 4o with tools and stuff and gets a suprisingly accurate answer. ik its vibe coded this was a test that i forgot to end',
     tags: ['react', 'AI', 'vibe coded sry'],
     status: 'stable',
     prodLink: 'https://valeeze.com',
@@ -29,7 +27,7 @@ const PROJECTS = [
   },
   {
     name: 'flight search',
-    description: 'kid-safe search engine with ai overviews, no logging, and a familiar google-like interface. just set it as your default and forget about it',
+    description: 'kid-safe search engine with ai overviews, no logging, and a google-like interface. built on searxng and the safest engine for kids out there.',
     tags: ['kid-safe', 'privacy', 'searxng'],
     status: 'stable',
     prodLink: 'https://flightsearch.kids',
@@ -38,7 +36,7 @@ const PROJECTS = [
   },
   {
     name: 'linkcheck',
-    description: _d('dXJsIGFjY2Vzc2liaWxpdHkgY2hlY2tlciwgdGVzdHMgaWYgc2l0ZXMgYXJlIHJlYWNoYWJsZSBmcm9tIGRpZmZlcmVudCBuZXR3b3Jrcy4gc3VwcG9ydHMgYmF0Y2ggb2YgdXAgdG8gMSwwMDAgdXJscyBpbiB1bmRlciAyMCBzZWNvbmRzLiBkaXNjb250aW51ZWQgYXMgb2YgMi8xMC8yNQ=='),
+    description: 'url accessibility checker, tests if sites are reachable from different networks. supports batch of up to 1,000 urls in under 20 seconds. discontinued as of 2/10/25',
     tags: ['discontinued'],
     status: 'discontinued',
     link: 'https://github.com/yethdev/linkcheck',

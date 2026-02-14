@@ -24,8 +24,9 @@ export default function Donate() {
       <section className="donate-hero">
         <h1>Donate</h1>
         <p>
-          if you wanna help me keep stuff up here are my wallet addresses.
-          anything helps
+          everything i do is funded out of pocket, domains, hardware, everything.
+          if you care to donate, my wallet addresses are here.
+          thank you, anything helps
         </p>
       </section>
 

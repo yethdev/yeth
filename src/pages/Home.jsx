@@ -59,8 +59,8 @@ export default function Home() {
         <h2>What I'm into</h2>
         <ul className="interests">
           <li><strong>Cybersecurity</strong>: CTFs, pentesting, etc. I do hackthebox sometimes</li>
-          <li><strong>Networking</strong>: homelabs, protocol stuff, packet analysis. have an OPNSense box thats really good</li>
-          <li><strong>AI / ML</strong>: mostly trying to apply ML to security problems like log analysis and anomaly detection. still not great</li>
+          <li><strong>Networking</strong>: homelabs, packets, protocols, etc. have an OPNSense box thats really good</li>
+          <li><strong>AI</strong>: trying to implement AI into security stuff like anomoly detection and log review, still working out how to make AI not destroy everything</li>
         </ul>
       </section>
 
@@ -75,7 +75,7 @@ export default function Home() {
               <h3 className="mono">linkcheck</h3>
               <Tag variant="muted">discontinued</Tag>
             </div>
-            <p>{_d('dXJsIGFjY2Vzc2liaWxpdHkgY2hlY2tlciwgdGVzdHMgaWYgc2l0ZXMgYXJlIHJlYWNoYWJsZSBmcm9tIGRpZmZlcmVudCBuZXR3b3Jrcy4gc3VwcG9ydHMgYmF0Y2ggb2YgdXAgdG8gMSwwMDAgdXJscyBpbiB1bmRlciAyMCBzZWNvbmRzLiBkaXNjb250aW51ZWQgYXMgb2YgMi8xMC8yNQ==')}</p>
+            <p>{'url accessibility checker, tests if sites are reachable from different networks. supports batch of up to 1,000 urls in under 20 seconds. discontinued as of 2/10/25'}</p>
             <div className="tags">
               <Tag variant="muted">discontinued</Tag>
             </div>
