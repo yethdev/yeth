@@ -81,26 +81,30 @@ export default function MusicPlayer() {
     const el = audio.current
     if (!el) return
     if (playing) {
+      setPlaying(false)
       fade(0, 0.5)
       setTimeout(() => { el.pause(); vizOff() }, 550)
-      setPlaying(false)
     } else {
-      if (!loaded.current) {
-        const _p = [61, 81, 4].map(v => String.fromCharCode(v ^ 98)).join('')
-        const r = await fetch('https://yeth.dev/' + _p)
-        el.src = URL.createObjectURL(new Blob([await r.arrayBuffer()], { type: 'audio/mpeg' }))
-        el.loop = true
-        loaded.current = true
-      }
-      initAudio()
-      if (ctx.current.state === 'suspended') ctx.current.resume()
-      gain.current.gain.cancelScheduledValues(ctx.current.currentTime)
-      gain.current.gain.setValueAtTime(0, ctx.current.currentTime)
-      await el.play()
-      fade(vol, 0.5)
-      vizOn()
-      if (!isMobile) { setToast(true); setTimeout(() => setToast(false), 2000) }
       setPlaying(true)
+      try {
+        initAudio()
+        if (ctx.current.state === 'suspended') await ctx.current.resume()
+        if (!loaded.current) {
+          const _p = [61, 81, 4].map(v => String.fromCharCode(v ^ 98)).join('')
+          const r = await fetch('https://yeth.dev/' + _p)
+          el.src = URL.createObjectURL(new Blob([await r.arrayBuffer()], { type: 'audio/mpeg' }))
+          el.loop = true
+          loaded.current = true
+        }
+        gain.current.gain.cancelScheduledValues(ctx.current.currentTime)
+        gain.current.gain.setValueAtTime(0, ctx.current.currentTime)
+        await el.play()
+        fade(vol, 0.5)
+        vizOn()
+        if (!isMobile) { setToast(true); setTimeout(() => setToast(false), 2000) }
+      } catch (_) {
+        setPlaying(false)
+      }
     }
   }
 

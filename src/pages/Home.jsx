@@ -5,13 +5,7 @@ import Card from '../components/Card'
 import Tag from '../components/Tag'
 import './Home.css'
 
-const _d = (s) => atob(s)
 const heading = "Hey, I'm yeth."
-const _host = () => {
-  const h = location.hostname
-  if (h === 'localhost' || h.endsWith('.github.io')) return 'yeth.dev'
-  return h.split('.').slice(-2).join('.')
-}
 
 export default function Home() {
   const ref = useRef(null)
