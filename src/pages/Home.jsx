@@ -61,8 +61,7 @@ export default function Home() {
           <h2>Recent projects</h2>
           <Link to="/projects" className="see-all">See all <ChevronRight size={16} /></Link>
         </div>
-        <div className="card-grid">
-        </div>
+        <p>coming up with new ideas</p>
       </section>
     </div>
   )
