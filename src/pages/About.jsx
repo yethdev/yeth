@@ -53,7 +53,9 @@ export default function About() {
         <h1>About me</h1>
         <div className="about-intro">
           <p>
-            Hey! I'm yeth, a self-taught developer that's into web and cybersecurity stuff. I build tools specifically designed to see the limits of software, and how far one specific tool can take me.
+            Hey! I'm yeth, a self-taught developer who's into web and cybersecurity stuff.
+            I build tools specifically designed to see the limits of software,
+            and how far one specific tool can take me.
           </p>
           <p>
             I love breaking and fixing things. I've added a lot of stuff to my

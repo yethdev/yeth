@@ -27,23 +27,28 @@ export default function Home() {
   return (
     <div className="page page-enter" ref={ref}>
       <section className="hero">
-        <h1 className="hero-title">
-          {heading.slice(0, Math.min(typed, 9))}
-          {typed > 9 && <span className="accent">{heading.slice(9, typed)}</span>}
-        </h1>
-        <p className="hero-tagline">wannabe full stack web/cybersecurity developer</p>
+        <div className="hero-row">
+          <div className="hero-text">
+            <h1 className="hero-title">
+              {heading.slice(0, Math.min(typed, 9))}
+              {typed > 9 && <span className="accent">{heading.slice(9, typed)}</span>}
+            </h1>
+            <p className="hero-tagline">wannabe full stack web/cybersecurity developer</p>
 
-        <p className="hero-subtitle">
-          I like breaking things and fixing them. Really into{' '}
-          cybersecurity, networking,
-          and recently AI/ML. Self-taught and always working on a project
-        </p>
+            <p className="hero-subtitle">
+              I like breaking things and fixing them. Really into{' '}
+              cybersecurity, networking,
+              and recently AI/ML. Self-taught and always working on a project
+            </p>
 
-        <div className="hero-cta">
-          <Link to="/projects" className="btn btn-primary">
-            Check out my projects <ArrowRight size={16} />
-          </Link>
-          <Link to="/about" className="btn btn-ghost">About me</Link>
+            <div className="hero-cta">
+              <Link to="/projects" className="btn btn-primary">
+                Check out my projects <ArrowRight size={16} />
+              </Link>
+              <Link to="/about" className="btn btn-ghost">About me</Link>
+            </div>
+          </div>
+          <img src="/pfp.png" alt="yeth" className="hero-pfp" />
         </div>
       </section>
 

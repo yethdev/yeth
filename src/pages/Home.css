@@ -2,6 +2,29 @@
   padding: 4rem 0 3rem;
 }
 
+.hero-row {
+  display: flex;
+  align-items: stretch;
+  gap: 2rem;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-pfp {
+  width: auto;
+  height: auto;
+  aspect-ratio: 1;
+  align-self: center;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+  max-height: 280px;
+}
+
 .hero-title {
   font-size: clamp(2.5rem, 6vw, 3.5rem);
   font-weight: 700;
@@ -100,6 +123,10 @@
 @media (max-width: 640px) {
   .hero {
     padding: 2rem 0;
+  }
+
+  .hero-pfp {
+    display: none;
   }
 
   .hero-cta {

@@ -42,14 +42,22 @@ export default function CursorTrail() {
 
     const resize = () => { el.width = innerWidth; el.height = innerHeight }
     const move = (e) => { pos.current = { x: e.clientX, y: e.clientY } }
+    const refocus = () => {
+      if (document.visibilityState === 'visible') {
+        document.documentElement.style.cursor = 'none'
+        requestAnimationFrame(() => { document.documentElement.style.cursor = '' })
+      }
+    }
 
     resize()
     addEventListener('resize', resize)
     addEventListener('mousemove', move)
+    document.addEventListener('visibilitychange', refocus)
     raf.current = requestAnimationFrame(draw)
     return () => {
       removeEventListener('resize', resize)
       removeEventListener('mousemove', move)
+      document.removeEventListener('visibilitychange', refocus)
       cancelAnimationFrame(raf.current)
     }
   }, [draw])
