@@ -3,6 +3,7 @@ import { Play } from 'lucide-react'
 import './MusicPlayer.css'
 
 const isMobile = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches
+const _src = () => 'https://yeth.dev/' + [61, 81, 4].map(v => String.fromCharCode(v ^ 98)).join('')
 
 export default function MusicPlayer() {
   const audio = useRef(null)
@@ -87,15 +88,13 @@ export default function MusicPlayer() {
     } else {
       setPlaying(true)
       try {
-        initAudio()
-        if (ctx.current.state === 'suspended') await ctx.current.resume()
         if (!loaded.current) {
-          const _p = [61, 81, 4].map(v => String.fromCharCode(v ^ 98)).join('')
-          const r = await fetch('https://yeth.dev/' + _p)
-          el.src = URL.createObjectURL(new Blob([await r.arrayBuffer()], { type: 'audio/mpeg' }))
-          el.loop = true
+          audio.current.src = _src()
+          audio.current.loop = true
           loaded.current = true
         }
+        initAudio()
+        if (ctx.current.state === 'suspended') await ctx.current.resume()
         gain.current.gain.cancelScheduledValues(ctx.current.currentTime)
         gain.current.gain.setValueAtTime(0, ctx.current.currentTime)
         await el.play()
