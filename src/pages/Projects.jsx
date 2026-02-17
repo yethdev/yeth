@@ -35,14 +35,6 @@ const PROJECTS = [
     category: ['infrastructure', 'forks'],
   },
   {
-    name: 'linkcheck',
-    description: 'url accessibility checker, tests if sites are reachable from different networks. supports batch of up to 1,000 urls in under 20 seconds. discontinued as of 2/10/25',
-    tags: ['discontinued'],
-    status: 'discontinued',
-    link: 'https://github.com/yethdev/linkcheck',
-    category: ['security', 'other'],
-  },
-  {
     name: 'movies that dont waste my time',
     description: 'movie library with aggregated reviews from multiple sources. forked and added support for free APIs',
     tags: ['fork', 'APIs', 'entertainment'],

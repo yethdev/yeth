@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, ChevronRight } from 'lucide-react'
-import Card from '../components/Card'
-import Tag from '../components/Tag'
 import './Home.css'
 
 const heading = "Hey, I'm yeth."
@@ -64,16 +62,6 @@ export default function Home() {
           <Link to="/projects" className="see-all">See all <ChevronRight size={16} /></Link>
         </div>
         <div className="card-grid">
-          <Card href="https://github.com/yethdev/linkcheck" className="interactive">
-            <div className="project-header">
-              <h3 className="mono">linkcheck</h3>
-              <Tag variant="muted">discontinued</Tag>
-            </div>
-            <p>{'url accessibility checker, tests if sites are reachable from different networks. supports batch of up to 1,000 urls in under 20 seconds. discontinued as of 2/10/25'}</p>
-            <div className="tags">
-              <Tag variant="muted">discontinued</Tag>
-            </div>
-          </Card>
         </div>
       </section>
     </div>
