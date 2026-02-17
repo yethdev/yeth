@@ -36,7 +36,7 @@ const PROJECTS = [
   },
   {
     name: 'movies that dont waste my time',
-    description: 'movie library with aggregated reviews from multiple sources. forked and added support for free APIs',
+    description: 'movie library with sources agreggated from rottontomatoes, IMDB, etc. Added easy to get APIs for library',
     tags: ['fork', 'APIs', 'entertainment'],
     status: 'stable',
     link: 'https://github.com/yethdev/movies-that-dont-waste-my-time/tree/main',
