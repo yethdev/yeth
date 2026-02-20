@@ -13,7 +13,7 @@ export default function Footer() {
           <a href="https://github.com/yethdev" target="_blank" rel="noopener noreferrer">
             <Github size={18} />
           </a>
-          <a href="https://discord.com/users/yethdev" target="_blank" rel="noopener noreferrer">
+          <a href="https://discord.com/users/968485773735251978" target="_blank" rel="noopener noreferrer">
             <MessageCircle size={18} />
           </a>
           <a href="mailto:hello@yeth.dev">

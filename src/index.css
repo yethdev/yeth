@@ -16,7 +16,7 @@
   --text-dim: #52525b;
   --accent: #fc4f15;
   --accent-hover: #fd8b35;
-  --accent-glow: rgba(252, 79, 21, 0.15);
+  --accent-glow: color-mix(in srgb, var(--accent) 15%, transparent);
   --green: #fd8b35;
   --green-dim: color-mix(in srgb, #fd8b35 10%, transparent);
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;

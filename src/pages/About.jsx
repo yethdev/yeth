@@ -112,7 +112,7 @@ export default function About() {
           <a href="mailto:hello@yeth.dev" className="btn btn-primary">
             hello@yeth.dev
           </a>
-          <a href="https://discord.com/users/yethdev" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
+          <a href="https://discord.com/users/968485773735251978" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
             @yethdev on Discord
           </a>
         </div>
