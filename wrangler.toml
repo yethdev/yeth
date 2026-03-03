@@ -1,0 +1,10 @@
+name = "yeth-dev"
+pages_build_output_dir = "./dist"
+compatibility_date = "2026-02-06"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"

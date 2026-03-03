@@ -1,0 +1,211 @@
+Identifying Visual Design Giveaways
+AI-generated websites often look modern and polished, but also oddly generic – as if assembled from the same template. Here are key visual signs that a site was “vibe coded” (built by AI tools):
+Template-Like Layouts & Repetitive Patterns: Many vibe-coded sites share very similar page structures. You’ll see the classic landing page formula: a hero section with a catchy tagline, a few icon-based feature highlights, perhaps some testimonials, and a call-to-action – all in a familiar arrangement. It feels like you’ve “seen it a thousand times before”
+. The design is clean but lacks uniqueness. Multiple vibe-built sites often end up with nearly interchangeable layouts and UI components, suggesting they all followed a generic blueprint
+.
+Overuse of Purple and Neon Accents: An unofficial mascot of AI-generated design is the color purple
+. Vibe-coded UIs often default to purple/indigo gradients, neon cyan or pink highlights, and dark gray (e.g. Tailwind’s gray-900) backgrounds for trendy contrast
+. This color scheme appears even on sites with no business using purple as a brand color
+. If you notice a random purple gradient as the hero background or glowing purple buttons by default, it’s a strong hint the design came from an AI’s “best guess” style guide
+. The prevalence of this palette in AI-built sites makes them all look alike.
+Emojis and ✨ Sparkles in UI Text: A telltale sign of vibe coding is a heavy sprinkle of emojis in the interface. For example, you might see sparkles (✨) or other emoji icons in headings, buttons, and feature lists for no compelling reason
+. A heading like “Launch your idea today ✨” or a button labeled “Let’s Go! 🚀” fits the vibe-coded stereotype. One or two emojis can add personality, but these sites tend to pepper them everywhere – in hero text, section titles, even as list bullets – which comes off as generic flair
+. Overusing emoji as design elements (instead of proper icons or graphics) is a sign the site was generated with a prompt that defaulted to “fun” placeholders.
+Excessive Glow and Animation Effects: Check the visual effects on the site. AI-generated sites often go overboard with modern CSS tricks – glowing buttons, neon shadows, and constant hover animations on every interactive element
+. For instance, buttons might have a soft halo or pulse when you mouse over them, cards might lift or subtly rotate on hover, and almost everything has max-rounded corners. These effects “felt modern” to the AI, so they’re applied liberally even when they’re distracting
+. Human designers usually exercise restraint (using animations only where it makes sense), whereas vibe-coded UIs make everything animated or glossy. If every card bounces or glows as you hover – basically “hover effects everywhere” – it points to an AI origin
+.
+Inconsistent Spacing or Responsiveness: Ironically, many AI-made sites look fine at first glance but break down on closer inspection. You might notice spacing and alignment issues that give a “jittery” feel: uneven padding between sections, too-tight or too-loose line heights, or elements not quite lining up
+. These subtle visual quirks come from the AI not following a strict design system – e.g. headings might be an overly heavy font weight while body text is too light, or a card component appears at slightly different sizes on different pages
+. Crucially, responsive design is often lacking. Many vibe-coded sites look great on desktop but have immediate issues on mobile devices
+. Signs include text or images overflowing the screen, sections that don’t re-stack properly, missing viewport meta tags (causing an oversized zoomed-in layout on phones)
+, or navigation bars that don’t adapt to mobile. If the site feels like a polished template on desktop but falls apart on a phone, it may have been generated without thorough responsive tuning – a common AI oversight
+.
+Generic/Textbook Content: The content itself can be a giveaway. Cliché marketing phrases and placeholder text suggest an AI wrote or filled the content. Look for tagline clichés like “Build your dreams,” “Launch faster,” or “Create without limits.” These inspiring-sounding but vague phrases appear frequently in vibe-coded landing pages and signal that the copy was slapped in last-minute
+. Similarly, any presence of obvious filler text – e.g. Lorem Ipsum blocks or repeated boilerplate descriptions that “perfectly fit” the design container
+ – is a red flag of auto-generation. Another clue is unconvincing testimonials: If you see a testimonial section with overly enthusiastic yet non-specific praise, a first name + last initial format (“Sarah P.”, “Michael R.”), and no links or details, it’s likely fabricated by AI
+. In fact, AI-generated testimonials often reuse a small set of stock first names (or even the same AI-generated face image twice) – which a savvy eye can spot as fake
+. Real sites tend to either have detailed, verifiable testimonials or none at all; a bunch of lookalike praise quotes with generic names screams “AI content.”
+Inspecting the HTML/CSS/JS for AI Markers
+Beyond the look and feel, the website’s source code can reveal whether it was AI-generated. Developers inspecting the HTML, CSS, and JavaScript should watch for these indicators:
+Lack of Semantic HTML Structure: AI-generated code often forgoes proper semantic tags. You might find that everything is built with <div> and <span> elements, without meaningful tags like <header>, <nav>, <main>, <section>, or <article> to outline the content. For example, an AI might make a page header just a <div class="header"> with styling, whereas a human developer would use a <header> tag. It’s common to see headings that should be <h1>, <h2> etc. instead implemented as large, styled <div>s or <p>s
+. If the heading hierarchy is broken or skipped (e.g. jumping straight from an <h1> to <h4> in the HTML, or using no heading tags at all)
+, that’s a sign of a non-expert/AI coder. This lack of semantic care is typical of vibe-coded projects and impacts both accessibility and SEO.
+“Utility Class” Soup (Default Tailwind CSS Styling): Many vibe-coded sites use utility-first CSS frameworks like Tailwind CSS because AI tools find it straightforward to apply. As a result, the HTML will be filled with long strings of classes for styling every element. Look at the HTML: do you see lots of class attributes like px-4 py-2 bg-purple-500 text-white rounded-lg shadow-lg on each element? That suggests an AI (or low-code tool) that brute-forced the design with Tailwind utilities rather than creating custom CSS. In particular, default Tailwind color names and spacing scales are a clue – e.g. many elements using text-gray-700 or bg-indigo-500 with no overrides. One Reddit observation notes “purple barebones Tailwind” sites where the default Tailwind styling (often a purple accent color and basic padding/margin classes) is plainly visible
+. A human developer might use Tailwind too, but they would likely introduce some unique classes (via Tailwind config) or semantic class names. If the code feels like it was copy-pasted from a Tailwind demo, with every style as a utility class and no custom CSS files at all, it could be AI-generated. (Also, absence of comments and uniform formatting in those utility-packed HTML files can hint that it was machine-made.)
+Overly Tidy, “Boilerplate” Code Structure: AI-generated code tends to be very uniform and formatted – every tag perfectly indented, no leftover debugging code or comments, and often minimal separation between sections. Real-world projects usually have some inconsistencies or human touches (comments, odd naming, perhaps some dead code) especially early in development. With vibe-coded sites, you might instead find the code almost too clean and generic. For example, all IDs and classes have very predictable names ("container", "section-1", "section-2") and there’s no evidence of iterative development (no commented-out alternatives or older sections). In some AI-coded HTML, you’ll even find placeholders or template artifacts left behind – things a human would remove. Common ones are templating syntax that wasn’t resolved (e.g. seeing {{COMPANY_NAME}} or <!-- TODO: add link --> in the source) or dummy links like <a href="#"> for social icons that don’t actually go anywhere
+. Seeing variables in double curly braces or obviously fake content in the HTML is a huge red flag that the site was auto-generated without full cleanup
+. An AI might also produce multiple nearly identical sections in the code, whereas a human might refactor repetitive parts into a loop or component – so if you see a lot of copy-pasted HTML blocks, that “templated” feel could indicate vibe coding.
+Missing Finer Details (SEO, Accessibility, etc.): Vibe-coded projects often omit the polishing touches that developers usually remember. Inspect the <head> of the HTML: is the <title> tag generic (e.g. just “Home” or “Untitled Site”)? Is there a lack of meta description or OpenGraph tags for social sharing? These missing meta tags are common in quick AI builds
+. Similarly, check for a favicon – AI-generated sites might still have the default framework favicon or none at all
+. In the body, look for absence of alt attributes on <img> tags (images with no alt text) and form elements with no labels – these accessibility oversights happen when a site is generated and not hand-checked
+. Each individual omission might happen on any site, but when you see many basic best-practices all missing at once – e.g. no alt text and no meta description and a default favicon – it strongly suggests the site was quickly spun up by AI and not fully attended to by a developer
+.
+Broken or Half-Implemented Scripts: Another code-level giveaway is the presence of JavaScript for features that don’t actually work right. Because AI models often generate the UI code but not a fully integrated back-end, you might find vestigial scripts. For instance, the HTML may include references to a carousel or modal script, but clicking the carousel arrows does nothing – the JS is either buggy or not hooked up. Common cases on vibe-coded sites: a dark mode toggle switch in the UI that doesn’t actually toggle anything, or social media icons in the header that are just static links (href="#") instead of real profiles
+. You might see a <script> block defining some functionality that is incomplete or a console full of errors from an AI-generated code block. Essentially, unfinished interactive components (forms that don’t submit anywhere, buttons with no action, tabs that don’t switch content) betray the fact that the site wasn’t fully built out by a developer
+. A well-crafted site will remove or fix non-functional elements; an AI-generated MVP often leaves them in, giving itself away.
+Avoiding the “AI-Generated” Look in Your Own Site
+If you’re using AI tools to assist with web design or code, you’ll want to “de-vibe” your site so it doesn’t carry the obvious markers discussed above. In short: add a thoughtful human touch. This involves both design decisions and coding practices. Below are best practices to ensure your site looks original and deliberately crafted, not like a cookie-cutter AI product.
+Custom Design & Authentic UX Tips
+Establish a Unique Style Guide (Go Beyond Defaults): One of the best ways to not look AI-generated is to inject your brand’s personality into the design. Don’t just accept whatever default color scheme or typography the AI gives you. Instead, define a consistent design system – for example, pick a specific color palette that matches your brand or theme (if everyone else is using purple by default, maybe your brand uses earth tones or a specific accent color). Use those colors purposefully across the site, rather than sticking with the AI’s generic choices
+. Do the same with fonts: choose one or two font families that fit your brand voice and establish a clear hierarchy (perhaps a strong display font for headings and a highly readable font for body text). Applying a cohesive style guide will immediately set your site apart from the homogenous “vibe” look. Also, enforce a consistent spacing and grid system in your CSS – for instance, use a 4px or 8px baseline grid for all margins/padding and stick to it
+. This prevents the weird inconsistent gaps that plague vibe-coded layouts. Overall, be intentional with every design choice (colors, typography, spacing) so that nothing feels random or “accidentally” like a default. Consistency and intentionality in design are the antidotes to the AI-template feel
+.
+Avoid Overused Gimmicks – Less Can Be More: It’s tempting to use the flashy tricks that AI tools suggest (neon glows, particle backgrounds, excessive emojis, etc.), but a more original-looking site will use these effects sparingly. Audit your design elements: if you find sparkles, emojis, or animations everywhere, scale them back. For example, maybe remove that emoji in the header or limit it to a single accent in the hero text (or none at all)
+. Replace emoji icons with custom SVG icons or images that fit your content more naturally. Tone down hover animations to be subtle – e.g. a slight elevation or color change, rather than a big jiggling card or blinding glow. In short, strive for a clean, intentional aesthetic. Use animations only to enhance UX (like a gentle hover highlight to indicate a button is interactive), not as decorative clutter. By removing the “generic modern web” embellishments that AI loves to add, your site will feel more handcrafted. As one guide puts it, reduce visual novelty and increase clarity – focus on clean design fundamentals (spacing, contrast, alignment) over trendy effects
+.
+Design for Responsiveness and Test It: To avoid the hallmark of AI sloppiness, invest time in your site’s responsive behavior. Don’t assume the AI’s output is mobile-friendly – manually adjust and write CSS for different breakpoints. Ensure your layout adapts elegantly: text should reflow without overlapping, images should resize, and components (like navbars or cards) should stack or re-arrange in a logical way on smaller screens. It’s wise to start with a mobile-first approach or at least test on an actual phone early. Also, consider accessibility as part of UX: add sufficient color contrast, legible font sizes, and visible focus states for interactivity (AI often misses these details). A site that works smoothly on mobile and is accessible will feel far more professional and intentionally designed. Remember, many vibe-coded sites “looked great on desktop, but mobile experiences suffered.” Don’t let yours be one of them – catch those issues and fix them with custom tweaks
+. This might include adding a proper <meta name="viewport"> tag, adjusting font sizes, or simplifying certain sections for small screens. If you eliminate poor responsiveness (one of the biggest AI giveaways), users will perceive the site as more human-crafted.
+Craft Real Content and Flow: Nothing breaks the illusion of quality design like obviously fake or generic content. To avoid looking AI-generated, put effort into your site’s copywriting and imagery. Come up with a distinctive tagline that speaks to your actual product or mission – specificity is key. For example, instead of a generic “Build your dreams” headline, say “Design and Publish Your Own Custom T-Shirts in Minutes” (if that’s your business). It immediately differentiates your site from all the AI-generated ones using boilerplate slogans
+. Do the same for section text – make it specific, use your brand’s voice, and include details that only a human with domain knowledge would know. If you have testimonials or team members listed, use real ones whenever possible (with photos/names you have permission to use). If you don’t have real testimonials yet, it may be better to omit that section entirely rather than include obviously AI-generated quotes. Review every piece of placeholder text that the AI generated and replace it with genuine content or remove it if it serves no real purpose. Similarly, ensure your site’s flow makes sense for users: e.g. if there’s a signup button, it should lead to a working signup form; if there’s a pricing section, it should reflect your actual pricing, etc. Paying attention to these content and flow details will make your site feel authentic. As one AI user/developer advises, cherry-pick ideas from well-designed sites in your niche and emulate what makes them feel real and engaging
+ – whether it’s the tone of the copy, the kind of images used, or the way the user journey is structured. By basing your content and UX on real user needs (and real successful patterns) rather than AI’s generic filler, you’ll avoid that “AI slop” vibe and create a site that stands out.
+Clean Coding & Development Practices
+Use Semantic, Intentional HTML: After using an AI tool to generate code, go through the markup and refactor it for semantics and clarity. This means replacing non-semantic containers with proper elements – e.g. if you see a <div id="header"> at the top, change it to a <header> tag. Ensure that your headings are in order (every page should have a single <h1, followed by <h2>, etc., without skipping levels)
+. Add <nav> for navigation menus, <main> for main content wrapper, <footer> for the footer, and so on. Not only will this improve accessibility (screen readers will thank you), it also signals to anyone looking at your code that a knowledgeable developer has structured the page. Similarly, clear out any weird or redundant nested <div>s that an AI might have added unnecessarily. Aim for lean, meaningful HTML. When another developer inspects your source, seeing well-structured, semantic HTML (with proper indentation) will give the impression of a hand-coded, professional site, not a quick AI scaffold.
+Simplify and Organize CSS Classes: If the AI generated 10 utility classes on every element, consider whether you can simplify. While there’s nothing wrong with using Tailwind or similar, you can still make the styling look intentional by removing unused classes and consolidating repetitive styles. For example, if many elements share the same combination of classes for a certain text style, define a small CSS class for that in your stylesheet (or a Tailwind component) – this shows you took the time to abstract common styles instead of copy-pasting classes everywhere. Also, ensure consistency: pick standard border-radius values and apply them project-wide (maybe your design uses 8px rounding on all cards and buttons)
+. Manually review colors and fonts – if the AI used slightly different grays or font sizes in two places, standardize them. This kind of cleanup removes the “auto-generated randomness” and enforces a cohesive look in the code. Additionally, rename any awkward AI-generated class names or IDs to something more descriptive for maintainability. A class name like .xl:pt-14 (Tailwind utility) is fine in context, but a class name like .container-bg-1 might be an AI artifact – you can do better by naming it .hero-section or similar to indicate purpose. Organized, DRY CSS and purposeful class names will distance your code from the dense, machine-generated feel.
+Complete the Missing Pieces: Recall those technical indicators (meta tags, alt text, etc.) – to avoid looking vibe-coded, you must fill all those in. Before launching your site, do a sweep of the HTML head and body for placeholders or omissions. Add a descriptive <title> (and make sure it’s not still “Home” or “My Site”). Write a meta description that genuinely summarizes your page for search engines. Add OpenGraph tags for social sharing (at least a basic image, title, and description)
+. Set a custom favicon so the browser tab doesn’t show a default icon. In the body, give every <img> an alt attribute that describes the image (or at least set alt="" for purely decorative images). Remove any dummy links or buttons that aren’t connected to real actions – either wire them up or delete them. For example, if you have social media icons, make sure they link to your actual profiles or remove the icon for the platforms you don’t have. Double-check forms or interactive controls: are they functional? If there’s a newsletter signup form that was just a front-end mock, integrate it with a service or at least disable it to not mislead users. Essentially, polish all the “little things” that an AI leaves half-done
+. This level of attention to detail is what a human developer brings and will elevate your site above an AI demo. It signals to users (and devs viewing source) that the project is actively maintained and thoughtfully built, not an abandoned prototype
+.
+Thoroughly Test and Refine: A key practice to make your site feel production-ready is rigorous testing – something an AI won’t do for you. Click every link, button, and toggle on your site to ensure it works as expected
+. If you find a carousel that doesn’t slide or a modal that doesn’t open, either fix it or remove that element until you can implement it properly. Test your forms (do you receive the submission? does the validation work?). Also test on multiple browsers and devices – sometimes AI-generated CSS might behave oddly in, say, Safari or on smaller screens. As you test, you’ll likely spot those subtle issues (e.g. a card that isn’t centered, or a dropdown that gets cut off on mobile). Fixing these will dramatically improve the user’s perception. Additionally, consider performance testing: AI code might not be optimized, so check your image sizes (compress them if needed), remove any large unused script libraries the AI may have included, and ensure the site loads fast. By iterating and fine-tuning the site through testing, you’ll eliminate the rough edges that make a site feel “auto-generated”. Users should be able to interact with everything smoothly – for instance, add proper loading states or feedback for actions. If clicking a button triggers an API call, show a spinner or loading indicator on that button so the user isn’t left hanging (lack of loading states is a common vibe-coded oversight)
+. These are the kinds of UX details humans think of that AIs often forget. Implementing them will make your site feel robust and trustworthy.
+Impose Your Own Code Style (and Comments): Finally, don’t be afraid to rewrite parts of the AI’s code in your own style. This isn’t just about vanity – it helps ensure you fully understand the code and it adheres to best practices. For example, if the AI generated a convoluted JavaScript function, refactor it into simpler, well-named functions or add comments explaining what it does. Introduce some structure if everything is in one file: maybe break out your CSS into multiple files (or logical sections) or split up large components into smaller ones if you’re using a framework. The goal is to make the code readable and maintainable for a human developer. Adding comments where appropriate (like // Toggle dark mode above a script or notes in the CSS for different sections) also gives the code a human touch – AI usually doesn’t comment its code. When another dev inspects your site, seeing meaningful variable names, comments, and a sensible project structure (with unused files or obvious AI artifacts removed) will indicate this project has been cared for by a developer post-generation. In summary, embrace the AI as a helper, but always do a human pass: tweak the design to be unique, fill in the gaps in code, and enforce consistency and quality. By doing so, you’ll end up with a site that benefits from AI-quick scaffolding without the telltale signs of “vibe coding.” As one comprehensive report on vibe-coded sites puts it: “The fastest way to make a site feel premium is consistency”
+ – consistency that only comes from thoughtful human oversight.
+Citations
+
+How to Spot an App Built by AI (And Why I Still Love “Vibe Coded” Apps) | by Marcia Cripps | Dec, 2025 | Medium
+
+https://medium.com/@marciacripps/how-to-spot-an-app-built-by-ai-and-why-i-still-love-vibe-coded-apps-02e78d41373f
+
+I analysed 500 vibe coded websites, here's what I found (avoid these mistakes) : r/vibecoding
+
+https://www.reddit.com/r/vibecoding/comments/1p5vfjr/i_analysed_500_vibe_coded_websites_heres_what_i/
+
+Vibe Coded Website Report
+
+https://docs.google.com/document/d/e/2PACX-1vTnLEdwSF1HPkuwOkuNneXGCaQAw5N2nnRf7cX_B4zuBLf2VTMi4Yh59gqS-eeVqYpa11iFQYmRjVBW/pub
+
+How to Spot an App Built by AI (And Why I Still Love “Vibe Coded” Apps) | by Marcia Cripps | Dec, 2025 | Medium
+
+https://medium.com/@marciacripps/how-to-spot-an-app-built-by-ai-and-why-i-still-love-vibe-coded-apps-02e78d41373f
+
+How to Spot an App Built by AI (And Why I Still Love “Vibe Coded” Apps) | by Marcia Cripps | Dec, 2025 | Medium
+
+https://medium.com/@marciacripps/how-to-spot-an-app-built-by-ai-and-why-i-still-love-vibe-coded-apps-02e78d41373f
+
+Vibe Coded Website Report
+
+https://docs.google.com/document/d/e/2PACX-1vTnLEdwSF1HPkuwOkuNneXGCaQAw5N2nnRf7cX_B4zuBLf2VTMi4Yh59gqS-eeVqYpa11iFQYmRjVBW/pub
+
+Vibe Coded Website Report
+
+https://docs.google.com/document/d/e/2PACX-1vTnLEdwSF1HPkuwOkuNneXGCaQAw5N2nnRf7cX_B4zuBLf2VTMi4Yh59gqS-eeVqYpa11iFQYmRjVBW/pub
+
+Vibe Coded Website Report
+
+https://docs.google.com/document/d/e/2PACX-1vTnLEdwSF1HPkuwOkuNneXGCaQAw5N2nnRf7cX_B4zuBLf2VTMi4Yh59gqS-eeVqYpa11iFQYmRjVBW/pub
+
+Vibe Coded Website Report
+
+https://docs.google.com/document/d/e/2PACX-1vTnLEdwSF1HPkuwOkuNneXGCaQAw5N2nnRf7cX_B4zuBLf2VTMi4Yh59gqS-eeVqYpa11iFQYmRjVBW/pub
+
+I analysed 500 vibe coded websites, here's what I found (avoid these mistakes) : r/vibecoding
+
+https://www.reddit.com/r/vibecoding/comments/1p5vfjr/i_analysed_500_vibe_coded_websites_heres_what_i/
+
+Could you even tell a vibe coded website from a template or one made without AI? : r/vibecoding
+
+https://www.reddit.com/r/vibecoding/comments/1n6t4fd/could_you_even_tell_a_vibe_coded_website_from_a/
+
+I Analyzed 100 Vibe-Coded Websites and Found These Common Mistakes - DEV Community
+
+https://dev.to/kaplich/i-analyzed-100-vibe-coded-websites-and-found-these-common-mistakes-5275
+
+I analysed 500 vibe coded websites, here's what I found (avoid these mistakes) : r/vibecoding
+
+https://www.reddit.com/r/vibecoding/comments/1p5vfjr/i_analysed_500_vibe_coded_websites_heres_what_i/
+
+Vibe Coded Website Report
+
+https://docs.google.com/document/d/e/2PACX-1vTnLEdwSF1HPkuwOkuNneXGCaQAw5N2nnRf7cX_B4zuBLf2VTMi4Yh59gqS-eeVqYpa11iFQYmRjVBW/pub
+
+Vibe Coded Website Report
+
+https://docs.google.com/document/d/e/2PACX-1vTnLEdwSF1HPkuwOkuNneXGCaQAw5N2nnRf7cX_B4zuBLf2VTMi4Yh59gqS-eeVqYpa11iFQYmRjVBW/pub
+
+I Analyzed 100 Vibe-Coded Websites and Found These Common Mistakes - DEV Community
+
+https://dev.to/kaplich/i-analyzed-100-vibe-coded-websites-and-found-these-common-mistakes-5275
+
+Could you even tell a vibe coded website from a template or one made without AI? : r/vibecoding
+
+https://www.reddit.com/r/vibecoding/comments/1n6t4fd/could_you_even_tell_a_vibe_coded_website_from_a/
+Every Fucking AI-Coded Website Ever
+
+https://vibe-coded.lol/
+Every Fucking AI-Coded Website Ever
+
+https://vibe-coded.lol/
+
+Vibe Coded Website Report
+
+https://docs.google.com/document/d/e/2PACX-1vTnLEdwSF1HPkuwOkuNneXGCaQAw5N2nnRf7cX_B4zuBLf2VTMi4Yh59gqS-eeVqYpa11iFQYmRjVBW/pub
+
+I Analyzed 100 Vibe-Coded Websites and Found These Common Mistakes - DEV Community
+
+https://dev.to/kaplich/i-analyzed-100-vibe-coded-websites-and-found-these-common-mistakes-5275
+
+I Analyzed 100 Vibe-Coded Websites and Found These Common Mistakes - DEV Community
+
+https://dev.to/kaplich/i-analyzed-100-vibe-coded-websites-and-found-these-common-mistakes-5275
+
+Vibe Coded Website Report
+
+https://docs.google.com/document/d/e/2PACX-1vTnLEdwSF1HPkuwOkuNneXGCaQAw5N2nnRf7cX_B4zuBLf2VTMi4Yh59gqS-eeVqYpa11iFQYmRjVBW/pub
+
+Vibe Coded Website Report
+
+https://docs.google.com/document/d/e/2PACX-1vTnLEdwSF1HPkuwOkuNneXGCaQAw5N2nnRf7cX_B4zuBLf2VTMi4Yh59gqS-eeVqYpa11iFQYmRjVBW/pub
+
+Vibe Coded Website Report
+
+https://docs.google.com/document/d/e/2PACX-1vTnLEdwSF1HPkuwOkuNneXGCaQAw5N2nnRf7cX_B4zuBLf2VTMi4Yh59gqS-eeVqYpa11iFQYmRjVBW/pub
+
+Vibe Coded Website Report
+
+https://docs.google.com/document/d/e/2PACX-1vTnLEdwSF1HPkuwOkuNneXGCaQAw5N2nnRf7cX_B4zuBLf2VTMi4Yh59gqS-eeVqYpa11iFQYmRjVBW/pub
+
+Vibe Coded Website Report
+
+https://docs.google.com/document/d/e/2PACX-1vTnLEdwSF1HPkuwOkuNneXGCaQAw5N2nnRf7cX_B4zuBLf2VTMi4Yh59gqS-eeVqYpa11iFQYmRjVBW/pub
+
+Vibe Coded Website Report
+
+https://docs.google.com/document/d/e/2PACX-1vTnLEdwSF1HPkuwOkuNneXGCaQAw5N2nnRf7cX_B4zuBLf2VTMi4Yh59gqS-eeVqYpa11iFQYmRjVBW/pub
+
+How to Spot an App Built by AI (And Why I Still Love “Vibe Coded” Apps) | by Marcia Cripps | Dec, 2025 | Medium
+
+https://medium.com/@marciacripps/how-to-spot-an-app-built-by-ai-and-why-i-still-love-vibe-coded-apps-02e78d41373f
+
+Vibe Coded Website Report
+
+https://docs.google.com/document/d/e/2PACX-1vTnLEdwSF1HPkuwOkuNneXGCaQAw5N2nnRf7cX_B4zuBLf2VTMi4Yh59gqS-eeVqYpa11iFQYmRjVBW/pub
+
+Vibe Coded Website Report
+
+https://docs.google.com/document/d/e/2PACX-1vTnLEdwSF1HPkuwOkuNneXGCaQAw5N2nnRf7cX_B4zuBLf2VTMi4Yh59gqS-eeVqYpa11iFQYmRjVBW/pub
+
+Vibe Coded Website Report
+
+https://docs.google.com/document/d/e/2PACX-1vTnLEdwSF1HPkuwOkuNneXGCaQAw5N2nnRf7cX_B4zuBLf2VTMi4Yh59gqS-eeVqYpa11iFQYmRjVBW/pub
+
+I analysed 500 vibe coded websites, here's what I found (avoid these mistakes) : r/vibecoding
+
+https://www.reddit.com/r/vibecoding/comments/1p5vfjr/i_analysed_500_vibe_coded_websites_heres_what_i/
+
+Vibe Coded Website Report
+
+https://docs.google.com/document/d/e/2PACX-1vTnLEdwSF1HPkuwOkuNneXGCaQAw5N2nnRf7cX_B4zuBLf2VTMi4Yh59gqS-eeVqYpa11iFQYmRjVBW/pub
+All Sources
